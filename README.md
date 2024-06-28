@@ -46,9 +46,13 @@ O projeto deve contar com algumas regras de negocio bem claras:
 Na sua máquina você precisa ter as mesmas ferramentas que citei no Inicio do README.md
 
 1 - Clone o projeto
+
 2 - Faça a cópia do arquivo .emv.example e renomeie ele para .env
+
 3 - Dentro do VSCode, use os seguintes comandos: 
+
 - composer update
 - php artisan key:generate
 - php artisan migrate:fresh --seed
+- 
 4 - Após isso, seu projeto está no ar e você pode acessar usando Laragon, Docker ou até mesmo o proprio php com o comando ´php artisan serve´
