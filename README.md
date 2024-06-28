@@ -40,6 +40,15 @@ O projeto deve contar com algumas regras de negocio bem claras:
 3 - Pessoas
  a - Tipo da pessoa(Chefe, Colaborador)
  b - "Poderes" - para permitir que somente o chefe cadastre a tarefa 
-**Como rodar o projeto?**
+
+***Como rodar o projeto?***
 
 Na sua máquina você precisa ter as mesmas ferramentas que citei no Inicio do README.md
+
+1 - Clone o projeto
+2 - Faça a cópia do arquivo .emv.example e renomeie ele para .env
+3 - Dentro do VSCode, use os seguintes comandos: 
+- composer update
+- php artisan key:generate
+- php artisan migrate:fresh --seed
+4 - Após isso, seu projeto está no ar e você pode acessar usando Laragon, Docker ou até mesmo o proprio php com o comando ´php artisan serve´
