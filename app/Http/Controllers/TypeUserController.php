@@ -12,54 +12,34 @@ class TypeUserController extends Controller
      */
     public function index()
     {
-        //
+        $typeUser = TypeUser::all();
+        return view("typeUser.index", compact("typeUser"));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "name"=> "required",
+        ]);
+        $typeUser = TypeUser::create($request->all());
+
+        return redirect()->route("typeUser.index")->with("success","Created");
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(TypeUser $typeUser)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(TypeUser $typeUser)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, TypeUser $typeUser)
     {
-        //
+        $request->validate([
+            "name"=> "required",
+        ]);
+
+        $typeUser->update($request->all());
+        return redirect()->route("typeUser.index")->with("success","");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(TypeUser $typeUser)
     {
-        //
+        $typeUser->delete();
     }
 }

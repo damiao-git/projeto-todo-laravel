@@ -13,55 +13,30 @@ class StatusController extends Controller
      */
     public function index()
     {
-        $classificacao = Status::all();
-        return view("", compact(""));
+        $status = Status::all();
+        return view("status.index", compact("status"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "name"=> "required",
+        ]);
+        $status = Status::create($request->all());
+        return redirect()->route("status.index")->with("success","Created");
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Status $status)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Status $status)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Status $status)
     {
-        //
+        $request->validate([
+            "name"=> "required",
+        ]);
+        $status->update($request->all());
+        redirect()->route("status.index")->with("success","Updated");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Status $status)
     {
-        //
+        $status->delete();
     }
 }
