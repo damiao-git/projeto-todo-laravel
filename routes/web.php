@@ -23,8 +23,8 @@ Route::controller(TypeUserController::class)->group(function () {
 Route::controller(StatusController::class)->group(function () {
     Route::get('status/','index')->name('status.index');
     Route::post('status/store','store')->name('status.store');
-    Route::put('status/update','update')->name('status.update');
-    Route::delete('status/destroy','destroy')->name('status.destroy');
+    Route::put('status/update/{id}','update')->name('status.update');
+    Route::delete('status/destroy/{id}','destroy')->name('status.destroy');
 });
 
 Route::controller(UserController::class)->group(function () {

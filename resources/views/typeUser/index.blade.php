@@ -41,5 +41,4 @@
     </main>
     @include('typeUser.modal.create')
     @include('typeUser.modal.edit')
-    @include('typeUser.modal.delete')
 @endsection

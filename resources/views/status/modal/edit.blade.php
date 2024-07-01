@@ -1,4 +1,6 @@
 <form action="#">
+  @csrf
+  @method('PUT')
     <div class="modal fade" id="editStatusModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -8,8 +10,9 @@
             </div>
             <div class="modal-body">
               <label for="type">Status</label>
-              <input type="text" name="status" id="status">
-              <button type="submit" class="btn btn-primary">Editar</button>
+              <input type="text" name="status_edit_" id="status_edit_" value="">
+              <input type="hidden" name="status_id_edit_" id="status_id_edit_" value="">
+              <button type="submit" class="btn btn-primary" onclick="editarStatus()">Editar</button>
             </div>
           </div>
         </div>
