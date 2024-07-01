@@ -12,7 +12,7 @@ Esse projeto tem como objetico principal, mostrar minhas habilidades com o uso d
 **Frontend**
 - HTML
 - CSS
-- Javascript Vanilla
+- Javascript
 
 **Versionamento**
 - Git
@@ -39,7 +39,12 @@ O projeto deve contar com algumas regras de negocio bem claras:
 
 3 - Pessoas
  - Tipo da pessoa(Chefe, Colaborador)
- - "Poderes" - para permitir que somente o chefe cadastre a tarefa 
+ - Nome
+
+4 - Tipo de pessoa(Perfil)
+ - A partir daqui liberarei os poderes de cada perfil
+ - Admin, chefe e colaborador
+
 **Como rodar o projeto?**
 
 Na sua máquina você precisa ter as mesmas ferramentas que citei no Inicio do README.md
