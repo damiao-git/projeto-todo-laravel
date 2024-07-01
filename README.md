@@ -28,18 +28,25 @@ O projeto deve contar com algumas regras de negocio bem claras:
 **Tabelas**
 
 1 - Classificacao da tarefa (Enum) - Tabela com colunas(id, classificacao)
- a - To Do
- b - Doing
- c - Done
+ - To Do
+ - Doing
+ - Done
 
 2 - Tarefa (Classe) - tabela com colunas(id, tarefa, classificacao_id(FK))
- a - Ex.: Cortar o cabelo
- b - Ex.: Levar o carro para revisão
- c - Ex.: Pagar contas do mês
+ - Ex.: Cortar o cabelo
+ - Ex.: Levar o carro para revisão
+ - Ex.: Pagar contas do mês
 
 3 - Pessoas
- a - Tipo da pessoa(Chefe, Colaborador)
- b - "Poderes" - para permitir que somente o chefe cadastre a tarefa 
+ - Tipo da pessoa(Chefe, Colaborador)
+ - "Poderes" - para permitir que somente o chefe cadastre a tarefa 
 **Como rodar o projeto?**
 
 Na sua máquina você precisa ter as mesmas ferramentas que citei no Inicio do README.md
+
+***Regras de negócio***
+
+__Uso de Midlewares com @can__
+- O usuário final precisa criar uma conta no sistema
+- O Usuário do tipo Colaborador só pode ver as proprias tarefas
+- O Usuário do tipo Chefe pode ver todas as tarefas
