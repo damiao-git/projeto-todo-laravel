@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Classificacao;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class ClassificacaoController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $classificacao = Classificacao::all();
-        return view("", compact(""));
+        $users = User::all();
+        return view("user.index", compact("users"));
     }
 
     /**
@@ -35,7 +35,7 @@ class ClassificacaoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Classificacao $classificacao)
+    public function show(User $user)
     {
         //
     }
@@ -43,7 +43,7 @@ class ClassificacaoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Classificacao $classificacao)
+    public function edit(User $user)
     {
         //
     }
@@ -51,7 +51,7 @@ class ClassificacaoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Classificacao $classificacao)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -59,7 +59,7 @@ class ClassificacaoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Classificacao $classificacao)
+    public function destroy(User $user)
     {
         //
     }

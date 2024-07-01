@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'typeUser'
     ];
 
     /**
@@ -42,4 +43,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function typeUser()
+    {
+        return $this->hasOne(TypeUser::class, 'user_id');
+    }
+    public function todo()
+    {
+        return $this->hasMany(Todo::class,'id');
+    }
 }
