@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 
 class StatusController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $status = Status::all();
@@ -20,18 +18,13 @@ class StatusController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|string|max:255', // Exemplo de regra de validação
+            'name' => 'required|string|max:255',
         ]);
 
-        // Cria um novo status com base nos dados recebidos
         $status = new Status();
-        $status->name = $request->name; // Atribui o nome do status
-        // Outros atributos, se houver
-
-        // Salva o status no banco de dados
+        $status->name = $request->name;
         $status->save();
-
-        // Retorna uma resposta JSON de sucesso
+        
         return response()->json(['message' => 'Status criado com sucesso', 'status' => $status], 201);
     }
 
