@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(TodoController::class)->group(function () {
+    Route::get('/', 'index')->name('todo');
     Route::get('todo/', 'index')->name('todo.index');
     Route::post('todo/store', 'store')->name('todo.store');
     Route::put('todo/update/{id}', 'update')->name('todo.update');

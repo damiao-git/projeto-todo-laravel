@@ -17,28 +17,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($typeUser as $user)
                     <tr>
-                        <td>#1</td>
-                        <td>Admin</td>
-                        <td>
-                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editTypeModal">Editar</a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteTypeModal">Excluir</a>
-                        </td>
+                    <td id="td_type_id_{{$user->id}}">{{$user->id}}</td>
+                    <td id="td_type_name_{{$user->id}}">{{$user->name}}</td>
+                    <td>
+                        <a href="#" class="btn btn-primary" onClick="return abrirModalEditar('{{$user->id}}');" data-bs-toggle="modal"
+                            data-bs-target="#editTypeModal">Editar</a>
+                        <a href="#" class="btn btn-danger" onclick="excluirStatus('{{$user->id}}')">Excluir</a>
+                    </td>
                     </tr>
-                    <tr>
-                        <td>#2</td>
-                        <td>Gerente</td>
-                        <td><a href="#">Editar</a><a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>#3</td>
-                        <td>Funcionario</td>
-                        <td><a href="#">Editar</a><a href="#">Excluir</a></td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </main>
     @include('typeUser.modal.create')
     @include('typeUser.modal.edit')
+    @include('typeUser.js')
 @endsection
